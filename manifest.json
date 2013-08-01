@@ -1,0 +1,18 @@
+{
+  "name": "GitHub Width",
+  "version": "839.8.2255",
+  "manifest_version": 3,
+  "update_url": "http://dev.lrscorp.net/BrowserExtensions/GitHubWidth.xml",
+  "description": "Makes the center column on GitHub Enterprise wider.",
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
+  "permissions": [
+    "http://git/"
+  ],
+  "content_scripts":
+  [
+    {
+      "matches": ["*://git/*", "https://github.com/*"],
+      "js": [ "githubwidth.js" ]
+    }
+  ]
+}
