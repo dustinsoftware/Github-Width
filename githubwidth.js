@@ -45,7 +45,13 @@ function setNiceWidths() {
 		if (typeof elements[index].style != 'undefined')
 			elements[index].style.width = shouldAdjustPage ? '100%' : '';
 	}
-	
+
+	elements = document.getElementsByClassName('css-truncate');
+	for (var index in elements)
+	{
+		if (typeof elements[index].style != 'undefined')
+			elements[index].style.maxWidth = shouldAdjustPage ? '100%' : ''; 
+	}
 	
 	var mainWidth = getWidth('repo-container');
 	var sidebarWidth = getWidth('repository-sidebar');
