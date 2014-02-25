@@ -22,7 +22,7 @@ function getWidth(className) {
 
 function setNiceWidths() {
 	shouldAdjustPage = new RegExp('(http://git|https://github.com)/.*/').test(document.URL) && 
-		(!new RegExp('(http://git|https://github.com)/(settings|organizations|.*/(network|pull|graphs|settings|issues|wiki|pulse))').test(document.URL) || 
+		(!new RegExp('(http://git|https://github.com)/(settings|organizations|gist|.*/(network|pull|graphs|settings|issues|wiki|pulse))').test(document.URL) || 
 		new RegExp('(http://git|https://github.com)/.*/pull/[0-9]+/files').test(document.URL));
 
 	elements = document.getElementsByClassName('container');
