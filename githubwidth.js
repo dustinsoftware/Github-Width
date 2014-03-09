@@ -22,7 +22,7 @@ function getWidth(className) {
 
 function setNiceWidths() {
 	shouldAdjustPage = new RegExp('(http://git|https://github.com)/.*/').test(document.URL) && 
-		(!new RegExp('(http://git|https://github.com)/(settings|organizations|.*/(network|pull|graphs|settings|issues|wiki|pulse))').test(document.URL) || 
+		(!new RegExp('(http://git|https://github.com)/(settings|organizations|gist|.*/(network|pull|graphs|settings|issues|wiki|pulse))').test(document.URL) || 
 		new RegExp('(http://git|https://github.com)/.*/pull/[0-9]+/files').test(document.URL));
 
 	elements = document.getElementsByClassName('container');
@@ -45,7 +45,13 @@ function setNiceWidths() {
 		if (typeof elements[index].style != 'undefined')
 			elements[index].style.width = shouldAdjustPage ? '100%' : '';
 	}
-	
+
+	elements = document.getElementsByClassName('css-truncate');
+	for (var index in elements)
+	{
+		if (typeof elements[index].style != 'undefined')
+			elements[index].style.maxWidth = shouldAdjustPage ? '100%' : ''; 
+	}
 	
 	var mainWidth = getWidth('repo-container');
 	var sidebarWidth = getWidth('repository-sidebar');
